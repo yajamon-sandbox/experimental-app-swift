@@ -10,6 +10,9 @@ targets:
     templates:
       - App
     sources: ExperimentalApp
+    postCompileScripts:
+      - script: . ./scripts/swiftlint.sh
+        name: Swiftlint
 
 settings:
   base:
