@@ -2,7 +2,7 @@ name: ExperimentalApp
 
 options:
   deploymentTarget:
-    iOS: 8.0
+    iOS: 9.0
   defaultConfig: Release
 
 targets:
