@@ -1,0 +1,37 @@
+name: ExperimentalApp
+
+options:
+  deploymentTarget:
+    iOS: 8.0
+  defaultConfig: Release
+
+targets:
+  ExperimentalApp:
+    templates:
+      - App
+    sources: ExperimentalApp
+
+settings:
+  base:
+    CLANG_ENABLE_OBJC_WEAK: YES
+    MTL_FAST_MATH: YES
+  configs:
+    Debug:
+      MTL_ENABLE_DEBUG_INFO: INCLUDE_SOURCE
+      GCC_PREPROCESSOR_DEFINITIONS:
+        - DEBUG=1
+        - $(inherited)
+    Release:
+      MTL_ENABLE_DEBUG_INFO: NO
+      SWIFT_OPTIMIZATION_LEVEL: -O
+
+targetTemplates:
+  App:
+    type: application
+    platform: iOS
+    settings:
+      base:
+        SWIFT_VERSION: 5.0
+        CODE_SIGN_STYLE: Automatic
+        PRODUCT_NAME: $(TARGET_NAME)
+        PRODUCT_BUNDLE_IDENTIFIER: com.yajamon.sandbox.$(PRODUCT_NAME)
